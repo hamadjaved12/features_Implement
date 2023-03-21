@@ -1,14 +1,15 @@
 import * as React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  NavigationContainer,
+  NavigatorScreenParams,
+} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import LanguageTranslator from '../screen/I8Folder/LanguageTranslator';
-import NewsDetail from '../screen/I8Folder/NewsDetail';
-import ImageResizing from '../screen/ImageResize/ImageResizing/ImageResizing';
+import PracticeStack, {PracticeStackParamsList} from './stack/PracticeStack';
+import I8Stack, {I8StackParamsList} from './stack/I8Stack';
 
 export type MainStackParamsList = {
-  LanguageTranslator: undefined;
-  NewsDetail: undefined;
-  ImageResizing: undefined;
+  PracticeStack: NavigatorScreenParams<PracticeStackParamsList>;
+  I8Stack: NavigatorScreenParams<I8StackParamsList>;
 };
 
 const Stack = createNativeStackNavigator<MainStackParamsList>();
@@ -17,14 +18,10 @@ function MainStack() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="ImageResizing"
+        initialRouteName="PracticeStack"
         screenOptions={{headerShown: false}}>
-        <Stack.Screen
-          name="LanguageTranslator"
-          component={LanguageTranslator}
-        />
-        <Stack.Screen name="NewsDetail" component={NewsDetail} />
-        <Stack.Screen name="ImageResizing" component={ImageResizing} />
+        <Stack.Screen name="PracticeStack" component={PracticeStack} />
+        <Stack.Screen name="I8Stack" component={I8Stack} />
       </Stack.Navigator>
     </NavigationContainer>
   );

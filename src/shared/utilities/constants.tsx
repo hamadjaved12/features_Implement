@@ -27,4 +27,27 @@ const LANGUAGE_List = [
   },
 ];
 
-export {default_img, image_options, LANGUAGE_List};
+const LANGUAGE_SELECT_LIST = [
+  {
+    id: 0,
+    title: 'English',
+    selected: false,
+  },
+  {
+    id: 1,
+    title: 'Spanish',
+    selected: false,
+  },
+  {
+    id: 2,
+    title: 'Urdu',
+    selected: false,
+  },
+  {
+    id: 3,
+    title: 'Arabic',
+    selected: false,
+  },
+];
+
+export {default_img, image_options, LANGUAGE_List, LANGUAGE_SELECT_LIST};
